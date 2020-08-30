@@ -1,5 +1,19 @@
 import React from 'react';
+import { graphql } from 'gatsby';
+import { HeroSection } from '@components/Landing';
 
-const Index = () => <h1>NathanHealea.com</h1>;
+export default ({ data }) => {
+  return (
+    <>
+      <HeroSection {...data.hero} />
+    </>
+  );
+};
 
-export default Index;
+export const pageQuery = graphql`
+  {
+    hero: mdx(fileAbsolutePath: { regex: "/hero/" }) {
+      body
+    }
+  }
+`;

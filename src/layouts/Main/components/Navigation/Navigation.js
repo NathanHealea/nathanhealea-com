@@ -1,10 +1,11 @@
 import React, { Fragment, useState } from 'react';
 import uuid from 'uuid/v4';
+import { Link } from 'gatsby';
+
 import {
   Box,
   AppBar,
   Toolbar,
-  Typography,
   Container,
   Hidden,
   IconButton,
@@ -14,12 +15,10 @@ import {
   ListItem,
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import { Link } from 'gatsby';
 
 import { Logo } from '@components';
 
 import config from '@configs';
-import { makeStyles } from '@material-ui/styles';
 
 // --- Utility Functions --- //
 /**
@@ -105,7 +104,7 @@ const Navigation = () => {
           </Toolbar>
         </Container>
       </AppBar>
-      <Toolbar component={Box} mb={4} />
+      <Toolbar component={Box} />
     </Fragment>
   );
 };
