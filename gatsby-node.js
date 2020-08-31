@@ -19,6 +19,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
         '@images': path.resolve(__dirname, 'src/images'),
         '@pages': path.resolve(__dirname, 'src/pages'),
         '@themes': path.resolve(__dirname, 'src/themes'),
+        '@providers': path.resolve(__dirname, 'src/providers'),
       },
     },
     devtool: 'eval-source-map',
