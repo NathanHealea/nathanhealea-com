@@ -51,7 +51,7 @@ const NavigationLogo = () => {
 const DesktopLinks = () => {
   return (
     <Hidden mdDown>
-      {generateNavgiationLink(Button, { color: 'primary' })}
+      {generateNavgiationLink(Button, { color: 'inherit' })}
     </Hidden>
   );
 };

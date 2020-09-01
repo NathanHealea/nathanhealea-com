@@ -1,16 +1,20 @@
 import React from 'react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-
 import { Section } from '@components';
+import { Button, Box } from '@material-ui/core';
 
-import config from '@configs';
-import { Button } from '@material-ui/core';
-
+/**
+ * TODO: Implement resume download
+ */
 export default ({ body }) => {
   return (
     <Section>
       <MDXRenderer>{body}</MDXRenderer>
-      <Button>Download Resume</Button>
+      <Box my={2}>
+        <Button variant='outlined' color='primary' size='large'>
+          Download Resume
+        </Button>
+      </Box>
     </Section>
   );
 };

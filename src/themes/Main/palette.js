@@ -3,7 +3,7 @@ import color from 'tinycolor2';
 /**
  * Primary Color
  */
-const primary = {
+const base = {
   main: '#F2FAF7',
   light: '',
   lightest: '',
@@ -27,7 +27,7 @@ const secondary = {
 /**
  * Accent Colors
  */
-const accent = {
+const primary = {
   main: '#24F2C2',
   light: '',
   lightest: '',
@@ -53,24 +53,24 @@ const type = 'dark';
  */
 const common = {
   black: secondary.main,
-  white: primary.main,
+  white: base.main,
 };
 
 /**
  * Text Color
  */
 const text = {
-  primary: primary.main,
-  secondary: color(primary.main)
+  primary: base.main,
+  secondary: color(base.main)
     .setAlpha(0.7)
     .toRgbString(),
-  disabled: color(primary.main)
+  disabled: color(base.main)
     .setAlpha(0.5)
     .toRgbString(),
-  hint: color(primary.main)
+  hint: color(base.main)
     .setAlpha(0.5)
     .toRgbString(),
-  icon: color(primary.main)
+  icon: color(base.main)
     .setAlpha(0.5)
     .toRgbString(),
 };
@@ -80,7 +80,7 @@ export default {
   common,
   primary,
   secondary,
-  accent,
+  base,
   background,
   text,
 };
