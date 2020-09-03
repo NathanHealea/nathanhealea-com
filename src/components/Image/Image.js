@@ -2,6 +2,10 @@ import React from 'react';
 import color from 'tinycolor2';
 
 import { styled } from '@material-ui/core/styles';
+
+/**
+ * TODO: Figure out how to implement animation with styled from MUI
+ */
 const Image = styled('div')(({ theme, src, height, width }) => ({
   position: 'relative',
   height,
