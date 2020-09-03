@@ -3,11 +3,13 @@ import uuid from 'uuid/v4';
 import {
   Typography,
   List,
-  ListItem,
+  // ListItem,
   Box,
   Divider,
   Link,
 } from '@material-ui/core';
+// import ArrowRightIcon from '@material-ui/icons/ArrowRight';
+import { ListItem } from './Overrides';
 
 const configuration = {
   gutterBottom: true,
@@ -56,7 +58,7 @@ export default {
           <ListItem key={uuid()}>{children}</ListItem>
         ))
       ) : (
-        <ListItem key={uuid()}>{children.children}}</ListItem>
+        <ListItem key={uuid()}>{children}</ListItem>
       )}
     </List>
   ),
@@ -81,6 +83,11 @@ export default {
     <Box mb={2}>
       <Divider />
     </Box>
+  ),
+  em: ({ children }) => (
+    <Typography variant='overline' component='span' color='primary'>
+      {children}
+    </Typography>
   ),
   a: ({ children, href }) => <Link to={href}>{children}</Link>,
 };
