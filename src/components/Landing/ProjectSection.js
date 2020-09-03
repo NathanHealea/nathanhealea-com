@@ -1,12 +1,15 @@
 import React from 'react';
 
-import { Section, Title } from '@components';
+import { Section, Title, FeatureProject } from '@components';
 import { Button, Box } from '@material-ui/core';
 
-export default (props) => {
+export default ({ featured }) => {
   return (
     <Section>
       <Title>Projects</Title>
+      {featured.nodes.map(({ frontmatter, body }) => {
+        return <FeatureProject {...frontmatter} {...{ description: body }} />;
+      })}
     </Section>
   );
 };

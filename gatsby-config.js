@@ -13,6 +13,14 @@ module.exports = {
       options: {
         defaultLayouts: { default: path.resolve('./src/templates/layout.js') },
       },
+      gatsbyRemarkPlugins: [
+        {
+          resolve: `gatsby-remark-images`,
+          options: {
+            maxWidth: 1200,
+          },
+        },
+      ],
     },
     'gatsby-plugin-react-helmet',
     {
@@ -35,8 +43,10 @@ module.exports = {
         path: `${__dirname}/content`,
       },
     },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
+    `gatsby-remark-images`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

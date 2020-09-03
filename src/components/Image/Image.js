@@ -10,6 +10,7 @@ const Image = styled('div')(({ theme, src, height, width }) => ({
   position: 'relative',
   height,
   width,
+
   backgroundImage: `url(${src})`,
   backgroundSize: 'cover',
   backgroundColor: color(theme.palette.primary.main)
@@ -28,8 +29,8 @@ const Image = styled('div')(({ theme, src, height, width }) => ({
   },
   '& > div': {
     position: 'relative',
-    height: '100%',
     width: '100%',
+    paddingTop: `calc(9/16 *100%)`,
     borderRadius: '8px',
     border: `2px solid ${theme.palette.primary.main}`,
     transform: 'translateZ(-16px)',

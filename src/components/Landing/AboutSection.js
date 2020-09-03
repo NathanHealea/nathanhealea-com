@@ -10,16 +10,22 @@ export default ({ body, frontmatter: { title, avatar } }) => {
     <Section>
       <Title>{title}</Title>
       <Grid container spacing={4}>
-        <Grid item md={6}>
+        <Grid item md={8}>
           <MDXRenderer>{body}</MDXRenderer>
         </Grid>
         <Grid
           item
+          // container
+          // spacing={0}
+          // alignItems={isMobile ? 'flex-start' : 'center'}
+          // justify={isMobile ? 'flex-start' : 'center'}
+          // md={6}
+          item
           container
           spacing={0}
-          alignItems={isMobile ? 'flex-start' : 'center'}
-          justify={isMobile ? 'flex-start' : 'center'}
-          md={6}
+          alignItems='center'
+          justify='center'
+          md={4}
         >
           <Image src={avatar} height='320px' width='320px' />
         </Grid>

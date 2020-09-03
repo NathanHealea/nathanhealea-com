@@ -7,7 +7,7 @@ export default ({ data }) => {
     <>
       <HeroSection {...data.hero} />
       <AboutSection {...data.about} />
-      <ProjectSection />
+      <ProjectSection featured={data.featured} />
     </>
   );
 };
@@ -25,6 +25,30 @@ export const pageQuery = graphql`
       frontmatter {
         title
         avatar
+      }
+    }
+    featured: allMdx(
+      filter: {
+        fileAbsolutePath: { regex: "/projects/" }
+        frontmatter: { featured: { eq: true } }
+      }
+      sort: { order: ASC, fields: frontmatter___date }
+    ) {
+      nodes {
+        frontmatter {
+          title
+          company
+          image {
+            publicURL
+          }
+          external
+          github
+          technologies
+          date
+          featured
+          showInProjects
+        }
+        body
       }
     }
   }
