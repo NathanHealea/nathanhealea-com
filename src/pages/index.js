@@ -1,12 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { HeroSection, AboutSection } from '@components/Landing';
+import { HeroSection, AboutSection, ProjectSection } from '@components/Landing';
 
 export default ({ data }) => {
   return (
     <>
       <HeroSection {...data.hero} />
       <AboutSection {...data.about} />
+      <ProjectSection />
     </>
   );
 };
