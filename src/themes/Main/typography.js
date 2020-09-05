@@ -1,4 +1,3 @@
-import paletter from './palette';
 import palette from './palette';
 
 /**

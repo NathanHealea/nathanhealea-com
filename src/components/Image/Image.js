@@ -10,7 +10,8 @@ const Image = styled('div')(({ theme, src, height, width }) => ({
   position: 'relative',
   height,
   width,
-
+  marginRight: '32px',
+  marginBottom: '32px',
   backgroundImage: `url(${src})`,
   backgroundSize: 'cover',
   backgroundColor: color(theme.palette.primary.main)
