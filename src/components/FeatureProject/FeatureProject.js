@@ -1,6 +1,6 @@
 import React from 'react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-
+import uuid from 'uuid/v4';
 import {
   Grid,
   Typography,
@@ -32,6 +32,7 @@ const TechnologyList = withStyles((theme) => ({
   root: {
     display: 'flex',
     flexDirection: 'row',
+    flexWrap: 'wrap',
   },
 }))(List);
 
@@ -72,7 +73,7 @@ const FeatureProject = ({
           </Content>
           <TechnologyList disablePadding dense>
             {technologies.map((technology) => (
-              <TechnologyListItem>{technology}</TechnologyListItem>
+              <TechnologyListItem key={uuid()}>{technology}</TechnologyListItem>
             ))}
           </TechnologyList>
           {github ? (
