@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import uuid from 'uuid/v4';
 import { Link } from 'gatsby';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 import {
   Box,
@@ -28,7 +29,12 @@ import config from '@configs';
  */
 const generateNavgiationLink = (Component, props = {}) => {
   return config.links.map((link) => (
-    <Component component={Link} {...props} to={link.path} key={uuid()}>
+    <Component
+      component={AnchorLink}
+      {...props}
+      to={`${link.path}${link.anchor}`}
+      key={uuid()}
+    >
       {link.title}
     </Component>
   ));

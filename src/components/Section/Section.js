@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Box, Container } from '@material-ui/core';
 
 const Section = ({ children, section, content, ...props }) => (
-  <Box component='section' {...section}>
+  <Box component='section' {...section} {...props}>
     <Container maxWidth={'lg'} {...content}>
       {children}
     </Container>

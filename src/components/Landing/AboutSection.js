@@ -5,7 +5,7 @@ import { Section, Title, Image } from '@components';
 
 export default ({ body, frontmatter: { title, avatar } }) => {
   return (
-    <Section>
+    <Section id='about'>
       <Title>{title}</Title>
       <Grid container spacing={4}>
         <Grid item md={8}>

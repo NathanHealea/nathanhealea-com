@@ -5,15 +5,15 @@ module.exports = {
     description:
       'Nathan Healea is a full stack engineer and software developer based in Eugene, Or.',
     keywords: '',
+    author: 'Nathan Healea',
   },
-  name: 'Nathan Healea',
   tagline: 'Software Developer | Full Stack Engineer',
   location: 'Eugene, Oregon',
   links: [
-    { title: 'Home', path: '/' },
-    { title: 'Projects', path: '/projects' },
-    { title: 'Experiences', path: '/experiences' },
-    { title: 'Notes', path: '/notes' },
+    { title: 'Home', path: '/', anchor: '#hero' },
+    { title: 'Projects', path: '/', anchor: '#projects' },
+    { title: 'Experiences', path: '/', anchor: '#experiences' },
+    { title: 'Notes', path: '/notes', anchor: '' },
   ],
   socialMedia: [
     {

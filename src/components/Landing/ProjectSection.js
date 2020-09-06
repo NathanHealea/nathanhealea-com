@@ -7,7 +7,7 @@ export default ({ featured, archived }) => {
   const [archiveShowMore, setShowMore] = useState(false);
   const toggleArchiveShowMore = () => setShowMore(!archiveShowMore);
   return (
-    <Section>
+    <Section id='projects'>
       <Title>Projects</Title>
       {featured.nodes.map(({ frontmatter, body, id }) => {
         return (

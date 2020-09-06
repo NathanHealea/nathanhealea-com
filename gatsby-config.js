@@ -1,12 +1,8 @@
 const path = require('path');
+const config = require('./src/configs');
 
 module.exports = {
-  siteMetadata: {
-    title: 'Gatsby Starter MDX Basic',
-    description:
-      'Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.',
-    author: '@chrisbiscardi',
-  },
+  siteMetadata: config.siteMetadata,
   plugins: [
     {
       resolve: `gatsby-plugin-mdx`,
@@ -47,11 +43,13 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,
+    `gatsby-plugin-anchor-links`,
+    `gatsby-plugin-material-ui`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-default-mdx-basic',
-        short_name: 'starter',
+        name: `${config.siteMetadata.title}`,
+        short_name: 'NathanHealea.com',
         start_url: '/',
         background_color: '#663399',
         theme_color: '#663399',

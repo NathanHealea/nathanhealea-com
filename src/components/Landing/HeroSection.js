@@ -8,7 +8,7 @@ import { Button, Box } from '@material-ui/core';
  */
 export default ({ body, frontmatter: { title } }) => {
   return (
-    <Section>
+    <Section id='hero'>
       <Title>{title}</Title>
       <MDXRenderer>{body}</MDXRenderer>
       <Box my={2}>
