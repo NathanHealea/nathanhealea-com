@@ -1,7 +1,8 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import uuid from 'uuid/v4';
 import { Link } from 'gatsby';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
+import { useScrollYPosition } from 'react-use-scroll-position';
 
 import {
   Box,
@@ -27,7 +28,7 @@ import config from '@configs';
  * @param {React Component Function} Component used to render navigation link with
  * @param {Object} props to apply to passed component
  */
-const generateNavgiationLink = (Component, props = {}) => {
+const generateNavigationLink = (Component, props = {}) => {
   return config.links.map((link) => (
     <Component
       component={AnchorLink}
@@ -57,7 +58,7 @@ const NavigationLogo = () => {
 const DesktopLinks = () => {
   return (
     <Hidden mdDown>
-      {generateNavgiationLink(Button, { color: 'inherit' })}
+      {generateNavigationLink(Button, { color: 'inherit' })}
     </Hidden>
   );
 };
@@ -67,6 +68,14 @@ const DesktopLinks = () => {
  */
 const MobileLinks = () => {
   const [isOpen, setOpen] = useState(false);
+
+  // Reference: https://github.com/brohlson/chaseohlson/blob/7457857e3bbc33aafb00a24cc21e06f83c3fda65/src/components/Header.js#L200
+  const scrollY = typeof window !== 'undefined' ? useScrollYPosition() : 0;
+
+  // Close drawer on page scroll when navigation has been clicked
+  useEffect(() => {
+    setOpen(false);
+  }, [scrollY]);
 
   const openDrawer = () => setOpen(true);
   const closeDrawer = () => setOpen(false);
@@ -84,7 +93,12 @@ const MobileLinks = () => {
       >
         <List style={{ width: '240px' }}>
           {config.links.map((link) => (
-            <ListItem button component={Link} to={link.path} key={uuid()}>
+            <ListItem
+              component={AnchorLink}
+              button
+              to={`${link.path}${link.anchor}`}
+              key={uuid()}
+            >
               {link.title}
             </ListItem>
           ))}

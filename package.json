@@ -26,6 +26,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
+    "react-use-scroll-position": "^2.0.0",
     "styled-components": "^5.1.1"
   },
   "keywords": [
