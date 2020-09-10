@@ -36,6 +36,7 @@
   "scripts": {
     "clean": "gatsby clean",
     "build": "gatsby build",
+    "deploy": "firebase deploy",
     "develop": "gatsby develop",
     "start": "yarn clean && yarn develop",
     "format": "prettier --write \"src/**/*.js\"",

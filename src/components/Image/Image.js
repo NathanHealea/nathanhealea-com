@@ -4,7 +4,7 @@ import color from 'tinycolor2';
 import { styled, withStyles } from '@material-ui/core/styles';
 import { Box } from '@material-ui/core';
 
-const ImageBox = withStyles((theme) => ({
+const Image = withStyles((theme) => ({
   root: (props) => ({
     position: 'relative',
     height: props.height,
@@ -57,8 +57,8 @@ const Boarder = styled('div')(({ theme }) => ({}));
 
 export default (props) => {
   return (
-    <ImageBox {...props}>
+    <Image {...props}>
       <Boarder />
-    </ImageBox>
+    </Image>
   );
 };
