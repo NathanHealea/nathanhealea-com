@@ -1,6 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { HeroSection, AboutSection, ProjectSection } from '@components/Landing';
+import {
+  HeroSection,
+  AboutSection,
+  ProjectSection,
+  ExperienceSection,
+} from '@components/Landing';
 
 export default ({ data }) => {
   return (
@@ -8,6 +13,7 @@ export default ({ data }) => {
       <HeroSection {...data.hero} />
       <AboutSection {...data.about} />
       <ProjectSection featured={data.featured} archived={data.archived} />
+      <ExperienceSection experiences={data.experience} />
     </>
   );
 };
@@ -73,6 +79,23 @@ export const pageQuery = graphql`
           showInProjects
         }
         body
+      }
+    }
+
+    experience: allMdx(
+      filter: { fileAbsolutePath: { regex: "/experiences/" } }
+      sort: { order: DESC, fields: frontmatter___start }
+    ) {
+      nodes {
+        id
+        body
+        frontmatter {
+          position
+          company
+          start(formatString: "MMM YYYY")
+          end(formatString: "MMM YYYY")
+          isCurrent
+        }
       }
     }
   }

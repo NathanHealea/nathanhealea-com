@@ -45,6 +45,7 @@ module.exports = {
     `gatsby-transformer-remark`,
     `gatsby-plugin-anchor-links`,
     `gatsby-plugin-material-ui`,
+
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
