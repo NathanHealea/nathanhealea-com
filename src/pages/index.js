@@ -84,14 +84,18 @@ export const pageQuery = graphql`
 
     experience: allMdx(
       filter: { fileAbsolutePath: { regex: "/experiences/" } }
-      sort: { order: DESC, fields: frontmatter___start }
+      sort: { order: DESC, fields: frontmatter___end }
     ) {
       nodes {
         id
         body
         frontmatter {
           position
+          department
           company
+          image {
+            publicURL
+          }
           start(formatString: "MMM YYYY")
           end(formatString: "MMM YYYY")
           isCurrent
