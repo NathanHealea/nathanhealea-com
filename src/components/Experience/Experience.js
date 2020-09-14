@@ -33,7 +33,6 @@ const Experience = ({
   body,
   excerpt,
 }) => {
-  console.log(excerpt);
   return (
     <Box my={'16px'}>
       <Grid container spacing={4}>

@@ -57,7 +57,7 @@ const NavigationLogo = () => {
  */
 const DesktopLinks = () => {
   return (
-    <Hidden mdDown>
+    <Hidden xsDown>
       {generateNavigationLink(Button, { color: 'inherit' })}
     </Hidden>
   );
@@ -80,7 +80,7 @@ const MobileLinks = () => {
   const openDrawer = () => setOpen(true);
   const closeDrawer = () => setOpen(false);
   return (
-    <Hidden lgUp>
+    <Hidden smUp>
       <IconButton color='inherit' onClick={openDrawer}>
         <MenuIcon />
       </IconButton>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navigation } from './components';
+import { Navigation, Footer } from './components';
 
 export default (props) => {
   const { children } = props;
@@ -9,6 +9,7 @@ export default (props) => {
       <Navigation />
 
       {children}
+      <Footer />
     </>
   );
 };

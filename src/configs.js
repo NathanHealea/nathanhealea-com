@@ -13,7 +13,6 @@ module.exports = {
     { title: 'Home', path: '/', anchor: '#hero' },
     { title: 'Projects', path: '/', anchor: '#projects' },
     { title: 'Experiences', path: '/', anchor: '#experiences' },
-    { title: 'Notes', path: '/notes', anchor: '' },
   ],
   socialMedia: [
     {
