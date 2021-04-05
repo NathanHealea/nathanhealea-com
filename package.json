@@ -40,7 +40,8 @@
     "develop": "gatsby develop",
     "start": "yarn clean && yarn develop",
     "format": "prettier --write \"src/**/*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "publish": "npm run clean && npm run build && npm run deploy"
   },
   "devDependencies": {
     "prettier": "^1.18.2"
